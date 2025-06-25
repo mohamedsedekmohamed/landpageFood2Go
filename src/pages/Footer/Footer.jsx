@@ -1,10 +1,17 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import chaer from '../../assets/footerpic.png'
 import Contect from '../Home/Contect';
-
+import AOS from "aos";
+import "aos/dist/aos.css";
  const Footer = () => {
+    useEffect(() => {
+      AOS.init({
+        duration: 2000, // optional: animation duration (ms)
+        once: true, // optional: whether animation should happen only once
+      });
+    }, []);
   return (
-<footer className="max-w-screen mt-5">
+<footer className="max-w-screen mt-5"  data-aos="fade-right">
   <div className="flex flex-col lg:flex-row">
     {/* Contact Image */}
     <div id="Contact" className="w-full lg:w-1/2 h-fit lg:h-auto">

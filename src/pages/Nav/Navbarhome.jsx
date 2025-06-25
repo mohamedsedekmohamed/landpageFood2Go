@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { CiMenuBurger } from "react-icons/ci";
 import { CiMenuFries } from "react-icons/ci";
 import { GoArrowDownRight } from "react-icons/go";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Navbarhome = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -12,7 +13,12 @@ const Navbarhome = () => {
 
   const location = useLocation();
   const navigate = useNavigate();
-
+     useEffect(() => {
+         AOS.init({
+           duration: 2000, // optional: animation duration (ms)
+           once: true, // optional: whether animation should happen only once
+         });
+       }, []);
   const navLinks = [
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
@@ -47,7 +53,11 @@ const Navbarhome = () => {
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between md:gap-5    lg:gap-20 h-[88px] items-center">
 
-          <div className="open-sans-bold text-[20px] md:text-[20px]  lg:text-[40px] text-white font-bold flex items-center">
+          <div
+            data-aos="zoom-in" 
+     data-aos-duration="1000" 
+     data-aos-delay="300" 
+          className="open-sans-bold text-[20px] md:text-[20px]  lg:text-[40px] text-white font-bold flex items-center">
           
            <svg width="56" height="55" viewBox="0 0 56 55" fill="none" xmlns="http://www.w3.org/2000/svg">
 <path d="M26.1781 35.8688V35.8931H26.5565C26.7457 35.9012 26.9432 35.9012 27.1488 35.9012C27.3792 35.9012 27.6095 35.9012 27.8234 35.8931V35.8688C27.2805 35.885 26.7293 35.8769 26.1781 35.8688ZM22.4844 35.6257C22.4718 35.6192 22.4575 35.6164 22.4433 35.6176C22.0155 35.569 21.6042 35.5204 21.2422 35.4556V35.4961C21.744 35.5852 22.2952 35.6581 22.8875 35.7148V35.6662C22.7476 35.65 22.616 35.6419 22.4844 35.6257Z" fill="white"/>

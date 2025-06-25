@@ -1,10 +1,16 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import comtop from '../assets/comtop.png'
 import combottom from '../assets/combottom.png'
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const ClientsSay = () => {
    const scrollRef = useRef(null);
-
+ useEffect(() => {
+    AOS.init({
+      duration: 2000, // optional: animation duration (ms)
+      once: true, // optional: whether animation should happen only once
+    });
+  }, []);
 const scroll = (direction) => {
   if (!scrollRef.current) return;
 
@@ -37,7 +43,7 @@ const products = [
        <div className="w-full relative flex items-center justify-center mt-10  p-4 lg:p-8">
         <div className="w-full relative">
           {/* Cards Carousel */}
-        <div
+        <div data-aos="zoom-in-left"
       ref={scrollRef}
       className="flex overflow-hidden scroll-smooth space-x-4 px-10 py-4 no-scrollbar pointer-events-auto"
     >
