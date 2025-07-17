@@ -31,17 +31,17 @@ const Contect = () => {
             <li className="flex items-center gap-3">
               <FiPhone size={20} />
               <span className="font-semibold">Phone:</span>
-              <span className="">+20 123 456 7890</span>
+              <span className="">+01111771103</span>
             </li>
             <li className="flex items-center gap-3">
               <FiMessageSquare size={20} />
               <span className="font-semibold">WhatsApp:</span>
-              <span className="">+20 123 456 7890</span>
+              <span className="">+01111771103</span>
             </li>
             <li className="flex items-center gap-3">
               <FiMail size={20} />
               <span className="font-semibold">Email:</span>
-              <span className="">support@edumy.com</span>
+              <span className="">info@food2go.online</span>
             </li>
             <li className="flex items-start gap-3">
               <FiMapPin size={20} />

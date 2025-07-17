@@ -138,7 +138,7 @@ const Navbarhome = () => {
             })}
           </div>
 
-<div className="flex gap-2">
+<div className=" hidden md:flex gap-2">
     <button className="text-white border border-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-4 py-2">Log in</button>
     <button className="text-one border bg-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-4 py-2">Sign up</button>
 </div>

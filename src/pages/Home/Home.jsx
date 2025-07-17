@@ -64,7 +64,7 @@ generation and menu browsing, so you can try it out before making a commitment.`
       <div className="bg-[url('assets/HomePic.png')]  max-w-screen min-h-screen max-h-[1000px] bg-repeat-round">
         <Navbarhome />
         <div
-          className="flex flex-col h-full pt-25 gap-15 md:pt-15 w-full   md:max-w-1/2  pl-10 md:gap-8 "
+          className="flex flex-col h-full pt-25 gap-15 md:pt-15 w-full   md:max-w-1/2   pl-2 md:pl-10 md:gap-8 "
           data-aos="zoom-out"
           data-aos-duration="4000"
           
@@ -76,14 +76,14 @@ generation and menu browsing, so you can try it out before making a commitment.`
             Food2GO makes it easy to manage menus, orders, and payments—all in
             one place.
           </span>
-          <div className="flex gap-6">
-            <button className="flex justify-evenly bg-white text-one  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3 px-7  gap-2 items-center rounded-[12px]">
+          <div className="flex gap-2 px-2 ">
+            <button className="flex justify-evenly w-40 md:w-60 bg-white text-one  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3   gap-2 items-center rounded-[12px]">
               <span>Start Now</span>
               <i>
                 <GoArrowUpRight />
               </i>
             </button>
-            <button className="flex justify-evenly  text-white border-white border-[1px]  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3 px-7  gap-2 items-center rounded-[12px]">
+            <button className="flex justify-evenly w-40 md:w-60 text-white border-white border-[1px]  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3  gap-2 items-center rounded-[12px]">
               <span>View Solutions</span>
               <i>
                 <GoArrowUpRight />
@@ -102,32 +102,32 @@ generation and menu browsing, so you can try it out before making a commitment.`
         </span>
 
         <div className="relative h-[300px] overflow-hidden flex items-center justify-center ">
-          <div className="whitespace-nowrap marquee flex gap-4">
+          <div className="whitespace-nowrap marquee flex gap-20">
             {[...Array(4)].map((_, i) => (
               <React.Fragment key={i}>
                 <img
                   src={onehero}
-                  className="w-[220px] h-[200px] rounded-xl"
+                  className="w-[250px] h-[200px] rounded-xl"
                   alt="hero 1"
                 />
                 <img
                   src={twohero}
-                  className="w-[220px] h-[200px] rounded-xl"
+                  className="w-[250px] h-[200px] rounded-xl"
                   alt="hero 2"
                 />
                 <img
                   src={threehero}
-                  className="w-[220px] h-[200px] rounded-xl"
+                  className="w-[250px] h-[200px] rounded-xl"
                   alt="hero 3"
                 />
                 <img
                   src={fourhero}
-                  className="w-[220px] h-[200px] rounded-xl"
+                  className="w-[250px] h-[200px] rounded-xl"
                   alt="hero 3"
                 />
                 <img
                   src={fivehero}
-                  className="w-[220px] h-[200px] rounded-xl"
+                  className="w-[250px] h-[200px] rounded-xl"
                   alt="hero 3"
                 />
               </React.Fragment>

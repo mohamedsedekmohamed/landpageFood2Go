@@ -231,7 +231,7 @@ const Nav = () => {
                     </svg>
                   </button>
                   {isDropdownOpen && (
-                    <div className="pl-4 mt-2 space-y-2">
+                    <div className= "pl-4 mt-2 space-y-2">
                       {subLinkGroups[link.subLinks].map((item, idx) => (
                         <button
                           key={idx}
