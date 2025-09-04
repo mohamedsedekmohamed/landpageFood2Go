@@ -19,7 +19,7 @@ const Nav = () => {
   const navLinks = [
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
-    { name: "Pricing", subLinks: "Pricing" },
+    { name: "Packeges", subLinks: "Pricing" },
     { name: "About Us", path: "/AboutUs" },
     { name: "Contact Us", path: "/ContactUs" },
   ];
@@ -36,7 +36,7 @@ const Nav = () => {
     ],
     Pricing: [
       { name: "Pricing", path: "/Pricing" },
-      { name: "Plans", path: "/Plans" },
+      { name: "Packeges", path: "/Plans" },
     ],
   };
 

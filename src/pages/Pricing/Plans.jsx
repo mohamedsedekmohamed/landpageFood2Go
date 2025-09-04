@@ -16,7 +16,7 @@ const Plans = () => {
     <div>
         <Nav/>
           <div className="w-screen h-fit flex flex-col items-center py-10 px-10">
-      <span className="font-semibold text-one text-[40px]">Pricing Plans</span>
+      <span className="font-semibold text-one text-[40px]">Packeges </span>
       <span className="font-normal my-5 text-seven text-[24px]">
         Choose the plan that fits your restaurant’s needs and take your digital
         experience to the next level.

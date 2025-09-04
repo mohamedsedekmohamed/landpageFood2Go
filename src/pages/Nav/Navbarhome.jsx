@@ -39,7 +39,7 @@ const Navbarhome = () => {
     ],
     Pricing: [
       { name: "Pricing", path: "/Pricing" },
-      { name: "Plans", path: "/Plans" },
+      { name: "Packeges", path: "/Plans" },
     ],
   };
 
