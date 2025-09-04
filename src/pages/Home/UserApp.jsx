@@ -22,10 +22,13 @@ click to delivery!
             </p>
 
             <div className="flex flex-wrap gap-4 mt-6" data-aos="zoom-in-up">
-              <button className="text-base flex justify-center items-center gap-3 open-sans-regular sm:text-lg w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] bg-one rounded-3xl text-white transition hover:bg-gradient-to-b from-six to-one hover:scale-95">
+              <a
+                            href='https://my.food2go.online/signUp'
+
+className="text-base flex justify-center items-center gap-3 open-sans-regular sm:text-lg w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] bg-one rounded-3xl text-white transition hover:bg-gradient-to-b from-six to-one hover:scale-95">
                 <span>Pricing </span>
                 <MdArrowOutward />
-              </button>
+              </a>
             </div>
           </div>
 

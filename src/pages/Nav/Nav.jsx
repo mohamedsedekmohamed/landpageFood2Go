@@ -46,10 +46,10 @@ const Nav = () => {
     return location.pathname === path;
   };
   return (
-    <div className="open-sans-light  h-fit  z-50 w-full ">
+    <div className="open-sans-light  relative h-fit  z-50 w-full ">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between md:gap-5    lg:gap-20 h-[88px] items-center">
-          <div className="open-sans-bold text-[20px] md:text-[20px]  lg:text-[40px] text-one font-bold flex items-center">
+          <a href="/" className="open-sans-bold text-[20px] md:text-[20px]  lg:text-[40px] text-one font-bold flex items-center">
             <svg
               width="56"
               height="55"
@@ -92,7 +92,7 @@ const Nav = () => {
             </svg>
 
             <span>Food2go</span>
-          </div>
+          </a>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex gap-6 relative">
@@ -177,12 +177,16 @@ const Nav = () => {
           </div>
 
           <div className="flex gap-2">
-            <button className="text-one border border-one rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-4 py-2">
+            <a
+            href="https://my.food2go.online/"
+            className="text-one border border-one rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium  px-2 md:px-4 py-2">
               Log in
-            </button>
-            <button className="bg-one  text-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-4 py-2">
+            </a>
+            <a
+            href="https://my.food2go.online/signUp"
+            className="bg-one  text-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-2 md:px-4 py-2">
               Sign up
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -200,7 +204,7 @@ const Nav = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="md:hidden px-4 pt-4 pb-6 space-y-4 bg-white backdrop-blur">
+        <div className=" absolute w-full md:hidden px-4 pt-4 pb-6 space-y-4 bg-white backdrop-blur">
           {navLinks.map((link, i) => {
             if (link.subLinks) {
               const isDropdownOpen = mobileDropdownOpen === link.name;

@@ -31,12 +31,12 @@ const Contect = () => {
             <li className="flex items-center gap-3">
               <FiPhone size={20} />
               <span className="font-semibold">Phone:</span>
-              <span className="">+01111771103</span>
+              <span className="">+01044664252</span>
             </li>
             <li className="flex items-center gap-3">
               <FiMessageSquare size={20} />
               <span className="font-semibold">WhatsApp:</span>
-              <span className="">+01111771103</span>
+              <span className="">+01044664252</span>
             </li>
             <li className="flex items-center gap-3">
               <FiMail size={20} />
@@ -47,8 +47,7 @@ const Contect = () => {
               <FiMapPin size={20} />
               <span className="font-semibold">Address:</span>
               <span className=" text-left">
-                329 Queensberry Street,
-                North Melbourne VIC 3051, Australia
+               Winget,Ibrahim Ragy street,Alexandria
               </span>
             </li>
           </ul>
@@ -56,8 +55,8 @@ const Contect = () => {
       </div>
       {/* \end */}
      <div>
-      <div className='flex justify-between p-10 bg-one gap-6'>
-     <span className='text-white'>© 2023 Maxwell Inc. All rights reserved.</span>
+      <div className='flex flex-col-reverse justify-between md:flex-row p-10 bg-one gap-6'>
+     <span className='text-white'>© 2025  Wego station.</span>
       <ul className="space-y-2  flex  flex-col gap-5  md:flex-row text-[14px] text-white ">
        <li>
     <a href="/" className="hover:scale-105 transition flex items-center gap-2">

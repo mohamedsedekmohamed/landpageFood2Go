@@ -23,6 +23,7 @@ import ClientsSay from "../../Ui/ClientsSay";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../Footer/Footer";
+import Homepic from '../../assets/HomePic.png'
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -30,6 +31,13 @@ const Home = () => {
       once: true, // optional: whether animation should happen only once
     });
   }, []);
+    const [yearly, setYearly] = useState(false);
+ const plans = [
+    { name: "Start", price: 0, desc: "QR Code generation, Menu Scan" },
+    { name: "Basic", price: 10, desc: "Small business with low traffic" },
+    { name: "Pro", price: 20, desc: "High traffic with 1 branch" },
+    { name: "Premium", price: 33.5, desc: "High traffic with 1+ branches" },
+  ];
   const data = [
     {
       label: "Can I use the system without the mobile app?",
@@ -58,86 +66,89 @@ generation and menu browsing, so you can try it out before making a commitment.`
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  const images = [
+    { src: onehero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
+    { src: onehero, alt: 'hero 3' ,ref:"https://mostafagad.food2go.online" },
+    { src: twohero, alt: 'hero 4' ,ref:"https://lamadafood.food2go.online/location" },
+    { src: onehero, alt: 'hero 5' ,ref:"https://mostafagad.food2go.online" },
+    { src: twohero, alt: 'hero 6' ,ref:"https://lamadafood.food2go.online/location" },
+  ];
 
   return (
     <div>
-      <div className="bg-[url('assets/HomePic.png')]  max-w-screen min-h-screen max-h-[1000px] bg-repeat-round">
-        <Navbarhome />
-        <div
-          className="flex flex-col h-full pt-25 gap-15 md:pt-15 w-full   md:max-w-1/2   pl-2 md:pl-10 md:gap-8 "
-          data-aos="zoom-out"
-          data-aos-duration="4000"
-          
-        >
-          <span className="text-white md:text-[40px] lg:text-[50px] xl:text-[64px] font-medium">
+    <div className="relative w-full min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${Homepic})` }}>
+      <Navbarhome />
+            <div className="absolute inset-0 bg-black opacity-10"></div>
+      <div
+        className="relative z-10 flex flex-col justify-center h-full px-4 md:px-16 pt-24 pb-8"
+        data-aos="zoom-out"
+      >
+        <div className="max-w-xl lg:max-w-2xl text-white">
+          <span className="block text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4 judson-bold">
             All-in-One Restaurant Management System
           </span>
-          <span className="text-white  md:text-[20px] lg:text-[24px] xl:text-[32px] font-normal">
-            Food2GO makes it easy to manage menus, orders, and payments—all in
-            one place.
+          <span className="block text-lg md:text-xl lg:text-2xl font-light mb-8 open-sans-regular">
+            Food2GO makes it easy to manage menus, orders, and payments—all in one place.
           </span>
-          <div className="flex gap-2 px-2 ">
-            <button className="flex justify-evenly w-40 md:w-60 bg-white text-one  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3   gap-2 items-center rounded-[12px]">
-              <span>Start Now</span>
-              <i>
-                <GoArrowUpRight />
-              </i>
-            </button>
-            <button className="flex justify-evenly w-40 md:w-60 text-white border-white border-[1px]  md:text-[14px] lg:text-[16px] xl:text-[18px] py-3  gap-2 items-center rounded-[12px]">
-              <span>View Solutions</span>
-              <i>
-                <GoArrowUpRight />
-              </i>
-            </button>
+          <div className="flex flex-col sm:flex-row gap-4">
+            <a href="https://my.food2go.online/signUp" className="flex items-center justify-center px-6 py-3 bg-white text-one text-lg font-semibold rounded-full hover:bg-opacity-90 transition transform hover:scale-105">
+              Start Now
+              <GoArrowUpRight className="ml-2" />
+            </a>
+          <button
+  onClick={() => {
+    document.getElementById("solutions-section")?.scrollIntoView({
+      behavior: "smooth",
+    });
+  }}
+  className="flex items-center justify-center px-6 py-3 text-white border-2 border-white text-lg font-semibold rounded-full hover:bg-white hover:text-one transition transform hover:scale-105"
+>
+  View Solutions
+  <GoArrowUpRight className="ml-2" />
+</button>
+
           </div>
         </div>
       </div>
+    </div>
       {/* hero  */}
       <div
-        className="bg-two flex flex-col p-1 md:p-10 m-10 overflow-hidden "
-        data-aos="flip-up"
-      >
-        <span className=" w-full text-center font-medium  md:text-[20px] lg:text-[24px] xl:text-[32px] text-six">
-          Our Clients Are Our Partners in Success
-        </span>
+      className="bg-two flex flex-col py-8 px-4 md:py-16 md:px-10 overflow-hidden"
+      data-aos="flip-up"
+    >
+      <span className="w-full text-center font-bold text-lg md:text-xl lg:text-2xl xl:text-4xl text-six mb-8">
+        Our Clients Are Our Partners in Success
+      </span>
 
-        <div className="relative h-[300px] overflow-hidden flex items-center justify-center ">
-          <div className="whitespace-nowrap marquee flex gap-20">
-            {[...Array(4)].map((_, i) => (
-              <React.Fragment key={i}>
-                <img
-                  src={onehero}
-                  className="w-[250px] h-[200px] rounded-xl"
-                  alt="hero 1"
-                />
-                <img
-                  src={twohero}
-                  className="w-[250px] h-[200px] rounded-xl"
-                  alt="hero 2"
-                />
-                <img
-                  src={threehero}
-                  className="w-[250px] h-[200px] rounded-xl"
-                  alt="hero 3"
-                />
-                <img
-                  src={fourhero}
-                  className="w-[250px] h-[200px] rounded-xl"
-                  alt="hero 3"
-                />
-                <img
-                  src={fivehero}
-                  className="w-[250px] h-[200px] rounded-xl"
-                  alt="hero 3"
-                />
-              </React.Fragment>
-            ))}
-          </div>
+      <div className="relative h-auto flex items-center justify-center">
+        <div className="whitespace-nowrap marquee flex space-x-4 md:space-x-8 lg:space-x-12">
+         {[...Array(2)].map((_, i) => (
+  <React.Fragment key={i}>
+    {images.map((image, idx) => (
+      <a
+        key={idx}
+        href={image.ref}
+        target="_blank"
+        rel="noopener noreferrer"
+     className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+
+      >
+        <img
+          src={image.src}
+          alt={image.alt}
+          className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+        />
+     </a>
+    ))}
+  </React.Fragment>
+))}
         </div>
       </div>
-      {/* Our Core Solutions for a Seamless Ordering Experience
-       */}
+    </div>
+     
       <div
+      id="solutions-section"
         className="m-10 flex  flex-col gap-4"
         data-aos="fade-up"
         data-aos-duration="3000"
@@ -153,10 +164,12 @@ generation and menu browsing, so you can try it out before making a commitment.`
       {/* row one */}
       <div className=" mx-10 flex justify-center gap-10 flex-wrap">
         {/* one */}
-        <div
+        <a
+        href="/MenuScan"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="fade-up-left"
         >
+
           <img
             src={rowoneone}
             className="w-75 h-75 transform transition-transform duration-300 group-hover:scale-105"
@@ -170,10 +183,11 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
 
         {/* two */}
-        <div
+        <a
+        href="/AdminApp"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="fade-up-left"
         >
@@ -190,10 +204,10 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
 
         {/* three */}
-        <div
+        <a href="/AdminPanel"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="fade-up-right"
         >
@@ -210,10 +224,11 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
 
         {/* four */}
-        <div
+        <a
+        href="/UserApp"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="fade-up-right"
         >
@@ -230,13 +245,14 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
       </div>
 
       {/* row two */}
       <div className="mx-10 flex my-10 justify-center gap-10  flex-wrap">
         {/* one */}
-        <div
+        <a
+        href="/DeliveryApp"
           className="relative group overflow-hidden rounded-[10px] "
           data-aos="flip-up"
           data-aos-duration="2000"
@@ -255,10 +271,11 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
 
         {/* two */}
-        <div
+        <a
+        href="/Websiteorderonline"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="flip-up"
           data-aos-duration="4000"
@@ -277,10 +294,11 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
 
         {/* three */}
-        <div
+        <a 
+        href="/Pos"
           className="relative group overflow-hidden rounded-[10px]"
           data-aos="flip-up"
           data-aos-duration="6000"
@@ -299,35 +317,35 @@ generation and menu browsing, so you can try it out before making a commitment.`
             </i>{" "}
             <span className="absolute top-10 left-0 w-0 h-0.5 bg-white  transition-all duration-300 group-hover:w-full"></span>
           </div>
-        </div>
+        </a>
       </div>
       {/* We Are Food2GO – Your Digital
 Partner in the Food World */}
       <div className="m-10 py-5 bg-two flex justify-between flex-wrap">
         <div
-          className="w-full md:w-1/2 flex flex-col justify-center pl-10 gap-10  "
+          className="w-full md:w-1/2 flex flex-col justify-center pl-3 md:pl-10 gap-10  "
           data-aos="zoom-in-down"
         >
           <span className=" pt-5  text-4xl md:text-[40px] font-semibold">
             We Are <span className="text-one">Food2GO </span>– Your Digital
             Partner in the Food World
           </span>
-          <div className="flex flex-col">
+          <div className="flex flex-col px-2">
             <span className="text-[24px] font-normal text-seven">
               Food2GO is a comprehensive digital platform offering smart
               solutions for restaurants of all sizes. From online ordering and
-              menu management to delivery apps and see more{" "}
+              menu management to delivery apps {" "}
             </span>
-            <span className="text-one underline md:text-[20px] lg:text-[24px] font-normal mt-2">
+            <a href="/AboutUs" className="text-one underline md:text-[20px] lg:text-[24px] font-normal mt-2">
               see more{" "}
-            </span>
+            </a>
           </div>
-          <button className="flex justify-evenly bg-one text-white w-40 md:text-[16px] lg:text-[18px] py-3 px-7  gap-2 items-center rounded-[12px]">
+          <a href="/AboutUs"  className="flex justify-evenly bg-one text-white w-40 md:text-[16px] lg:text-[18px] py-3 px-7  gap-2 items-center rounded-[12px]">
             <span>About Us </span>
             <i>
               <GoArrowUpRight />
             </i>
-          </button>
+          </a>
         </div>
         <div
           className="w-full md:w-1/2 flex justify-center items-center"
@@ -337,53 +355,53 @@ Partner in the Food World */}
         </div>
       </div>
       {/*   Pricing Plans*/}
-      <div className="w-screen h-fit flex flex-col items-center py-10 px-10 ">
-        <span
-          className="font-semibold text-one text-[40px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-        >
-          Pricing Plans
-        </span>
-        <span
-          className="font-normal my-5 text-seven text-[24px]"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-bottom"
-        >
-          Choose the plan that fits your restaurant’s needs and take your
-          digital experience to the next level.{" "}
-        </span>
+     <div className="w-screen h-fit flex flex-col items-center py-10 px-10">
+      <span className="font-semibold text-one text-[40px]">Pricing Plans</span>
+      <span className="font-normal my-5 text-seven text-[24px]">
+        Choose the plan that fits your restaurant’s needs and take your digital
+        experience to the next level.
+      </span>
 
-        <div className="flex gap-2  " data-aos="fade-up">
-          <div className="flex items-center gap-3">
-            <span className="text-sm text-gray-700">Pay Monthly</span>
-            <label className="relative inline-flex items-center cursor-pointer">
-              <input type="checkbox" className="sr-only peer" />
-              <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-green-500 transition-colors"></div>
-              <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5"></div>
-            </label>
-            <span className="text-sm text-gray-700">Pay Yearly</span>
-          </div>
+      {/* Switch */}
+      <div className="flex gap-2">
+        <div className="flex items-center gap-3">
+          <span className="text-sm text-gray-700">Pay Monthly</span>
+          <label className="relative inline-flex items-center cursor-pointer">
+            <input
+              type="checkbox"
+              className="sr-only peer"
+              checked={yearly}
+              onChange={() => setYearly(!yearly)}
+            />
+            <div className="w-11 h-6 bg-gray-300 rounded-full peer peer-checked:bg-green-500 transition-colors"></div>
+            <div className="absolute left-1 top-1 w-4 h-4 bg-white rounded-full transition-all peer-checked:translate-x-5"></div>
+          </label>
+          <span className="text-sm text-gray-700">Pay Yearly</span>
         </div>
-        {/* cards */}
-        <div className="flex  justify-center md:justify-between max-w-screen  my-10 gap-2 flex-wrap items-center">
-          {/* one */}
+      </div>
+
+      {/* Plans */}
+      <div className="flex justify-center md:justify-between max-w-screen my-10 gap-2 flex-wrap items-center">
+        {plans.map((plan, i) => (
           <div
+            key={i}
             className="w-[300px] h-[410px] bg-[#F5F5F5] rounded-[8px] p-6 flex flex-col items-start gap-[40px] box-border mt-5 group hover:bg-one transition-all duration-300"
-            data-aos="fade-left"
-            data-aos-duration="1000"
           >
             <h2 className="text-2xl font-semibold group-hover:text-white transition">
-              Start
+              {plan.name}
             </h2>
 
             <div className="flex gap-2 items-center">
               <span className="text-[56px] font-medium group-hover:text-white transition">
-                FREE
+                {plan.price === 0
+                  ? "FREE"
+                  : `$${yearly ? plan.price * 12 : plan.price}`}
               </span>
-              <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
-                / Month
-              </span>
+              {plan.price > 0 && (
+                <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
+                  / {yearly ? "Year" : "Month"}
+                </span>
+              )}
             </div>
 
             <button className="mt-auto px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
@@ -391,150 +409,17 @@ Partner in the Food World */}
             </button>
 
             <ul className="space-y-2 text-black group-hover:text-white transition">
-              <li className="flex items-center gap-2">
+              <li className="flex items-center text-[14px] gap-2">
                 <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7EBEC] group-hover:bg-white transition">
                   <FaCheck className="text-one text-sm" />
                 </span>
-                QR Code generation
-              </li>
-              <li className="flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7EBEC] group-hover:bg-white transition">
-                  <FaCheck className="text-one text-sm" />
-                </span>
-                Menu Scan
+                {plan.desc}
               </li>
             </ul>
           </div>
-          {/* two */}
-          <div
-            className="w-[300px] h-[410px] bg-[#F5F5F5] rounded-[8px] p-6 flex flex-col items-start gap-[40px] box-border mt-5 group hover:bg-one transition-all duration-300"
-            data-aos="fade-left"
-            data-aos-duration="5000"
-          >
-            <h2 className="text-2xl font-semibold group-hover:text-white transition">
-              Basic
-            </h2>
-
-            <div className="flex gap-2 items-center">
-              <span className="text-[56px] font-medium group-hover:text-white transition">
-                $10
-              </span>
-              <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
-                / Month
-              </span>
-            </div>
-
-            <button className="mt-7 px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
-              Get Started
-            </button>
-
-            <ul className="space-y-2 text-black group-hover:text-white transition">
-              <li className="flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7EBEC] group-hover:bg-white transition">
-                  <FaCheck className="text-one text-sm" />
-                </span>
-                Small business with low traffic{" "}
-              </li>
-            </ul>
-          </div>
-          {/* three */}
-          <div
-            className="w-[300px] h-[410px] bg-[#F5F5F5] rounded-[8px] p-6 flex flex-col items-start gap-[40px] box-border mt-5 group hover:bg-one transition-all duration-300"
-            data-aos="fade-left"
-            data-aos-duration="9000"
-          >
-            <h2 className="text-2xl font-semibold group-hover:text-white transition">
-              Pro
-            </h2>
-
-            <div className="flex gap-2 items-center">
-              <span className="text-[56px] font-medium group-hover:text-white transition">
-                $20
-              </span>
-              <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
-                / Month
-              </span>
-            </div>
-
-            <button className="mt-7 px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
-              Get Started
-            </button>
-
-            <ul className="space-y-2 text-black group-hover:text-white transition">
-              <li className="flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7EBEC] group-hover:bg-white transition">
-                  <FaCheck className="text-one text-sm" />
-                </span>
-                High traffic with 1 branch{" "}
-              </li>
-            </ul>
-          </div>
-          {/* four */}
-          <div
-            className="w-[300px] h-[410px] bg-[#F5F5F5] rounded-[8px] p-6 flex flex-col items-start gap-[40px] box-border mt-5 group hover:bg-one transition-all duration-300"
-            data-aos="fade-left"
-            data-aos-duration="13000"
-          >
-            <h2 className="text-2xl font-semibold group-hover:text-white transition">
-              Premium
-            </h2>
-
-            <div className="flex gap-2 items-center">
-              <span className="text-[56px] font-medium group-hover:text-white transition">
-                $33.5
-              </span>
-              <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
-                / Month
-              </span>
-            </div>
-
-            <button className="mt-7 px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
-              Get Started
-            </button>
-
-            <ul className="space-y-2 text-black group-hover:text-white transition">
-              <li className="flex items-center gap-2">
-                <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-[#F7EBEC] group-hover:bg-white transition">
-                  <FaCheck className="text-one text-sm" />
-                </span>
-                High traffic with 1+ branches{" "}
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        {/* boxs */}
-        <div
-          className="w-[90%] py-10  my-10 px-8  flex gap-30 flex-wrap open-sans-regular items-center justify-evenly bg-two"
-          data-aos="fade-up"
-          data-aos-anchor-placement="center-center"
-        >
-          <div className="flex flex-col justify-center items-center  ">
-            <p className=" text-[20px] font-normal">Restaurants </p>
-            <p className="text-one text-center text-[48px] font-normal">
-              150+{" "}
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center  ">
-            <p className=" text-[20px] font-normal text-center">Orders </p>
-            <p className="text-one text-center text-[48px] font-normal">
-              20,000+{" "}
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center  ">
-            <p className=" text-[20px] font-normal"> Mobile Apps </p>
-            <p className="text-one text-center text-[48px] font-normal">
-              100+{" "}
-            </p>
-          </div>
-          <div className="flex flex-col justify-center items-center  ">
-            <p className=" text-[20px] font-normal">Admin Panels </p>
-            <p className="text-one  text-center text-[48px] font-normal">
-              80+{" "}
-            </p>
-          </div>
-        </div>
+        ))}
       </div>
+    </div>
       {/*           Order Journey Step by Step
        */}
      <div className="max-w-screen mx-5 md:mx-10 flex flex-col space-y-2 p-5 md:p-10">

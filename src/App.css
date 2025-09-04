@@ -8,14 +8,27 @@
   0% {
     transform: translateX(0);
   }
+  20% {
+    transform: translateX(-10%);
+  }
+  40% {
+    transform: translateX(-20%);
+  }
+  60% {
+    transform: translateX(-30%);
+  }
+  80% {
+    transform: translateX(-40%);
+  }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%); /* عشان نوصل لنص النسخة المكررة */
   }
 }
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
 .no-scrollbar {
-  -ms-overflow-style: none; /* IE and Edge */
-  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; 
+  scrollbar-width: none; 
 }
