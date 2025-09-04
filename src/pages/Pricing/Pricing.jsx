@@ -8,7 +8,8 @@ const Pricing = () => {
     <div>
       <Nav/>
       <div className="w-screen h-fit flex flex-col items-center py-10 px-10 ">
-        <div className="w-full flex flex-col gap-2">
+        <div 
+        className="w-full flex flex-col gap-2">
           <span className="font-semibold text-one text-[30px] lg:text-[40px]">
             Our Flexible Pricing
           </span>
@@ -20,7 +21,8 @@ const Pricing = () => {
         </div>
 
         {/* cards */}
-        <div className="flex justify-center md:justify-between max-w-screen my-10 gap-5 lg:gap-10 flex-wrap items-center">
+        <div
+         className="flex justify-center md:justify-between max-w-screen my-10 gap-5 lg:gap-10 flex-wrap items-center">
 
           {/* one */}
           <div className="w-[300px] h-[410px] bg-[#F5F5F5] rounded-[8px] p-6 flex flex-col items-start gap-[30px] box-border mt-5 group hover:bg-one transition-all duration-300">
