@@ -19,7 +19,7 @@ const Nav = () => {
   const navLinks = [
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
-    { name: "Packeges", subLinks: "Pricing" },
+    { name: "Packages", subLinks: "Pricing" },
     { name: "About Us", path: "/AboutUs" },
     { name: "Contact Us", path: "/ContactUs" },
   ];
@@ -36,7 +36,7 @@ const Nav = () => {
     ],
     Pricing: [
       { name: "Pricing", path: "/Pricing" },
-      { name: "Packeges", path: "/Plans" },
+      { name: "Packages", path: "/Plans" },
     ],
   };
 
@@ -152,7 +152,7 @@ const Nav = () => {
                 <MdArrowOutward className="w-5 h-5" />
               </Link>
             ))}
-          </div>
+          </div>  
         )}
       </div>
     );

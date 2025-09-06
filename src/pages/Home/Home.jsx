@@ -395,14 +395,21 @@ Partner in the Food World */}
               <span className="text-[56px] font-medium group-hover:text-white transition">
                 {plan.price === 0
                   ? "FREE"
-                  : `$${yearly ? plan.price * 12 : plan.price}`}
+                  : `$${yearly ? plan.price * 10 : plan.price}`}
               </span>
               {plan.price > 0 && (
                 <span className="text-[16px] font-normal text-seven group-hover:text-white transition">
                   / {yearly ? "Year" : "Month"}
                 </span>
+                
               )}
+              
             </div>
+                {yearly && plan.price  > 0 && (
+                    <span className="text-green-600 font-semibold group-hover:text-white transition">
+                      🎉 enjoy ${plan.price *2} savings
+                    </span>
+                  )}
 
             <button className="mt-auto px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
               Get Started

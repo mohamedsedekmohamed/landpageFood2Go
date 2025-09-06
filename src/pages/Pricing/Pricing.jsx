@@ -15,7 +15,7 @@ const Pricing = () => {
           </span>
           
           <span className="font-normal w my-5 text-seven text-[20px] lg:text-[24px]">
-            Choose the server package that suits your restaurant size and technical needs —
+            Choose the plan that suits your restaurant size and technical needs —
             and start your digital transformation with ease and no extra cost.
           </span>
         </div>
