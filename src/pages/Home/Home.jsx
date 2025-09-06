@@ -403,7 +403,9 @@ Partner in the Food World */}
                 </span>
                 
               )}
-              
+                 
+
+                 
             </div>
                 {yearly && plan.price  > 0 && (
                     <span className="text-green-600 font-semibold group-hover:text-white transition">
