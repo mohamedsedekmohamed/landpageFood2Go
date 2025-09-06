@@ -80,7 +80,7 @@ const Plans = () => {
 
                 <a
                   href='https://my.food2go.online/signUp'
-                  className="mt-auto px-4 py-2 bg-one text-center w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
+                  className="mt-auto px-4 py-2 bg-one mx-auto text-center w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
                   Get Started
                 </a>
 

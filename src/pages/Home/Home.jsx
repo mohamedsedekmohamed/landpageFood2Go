@@ -411,9 +411,12 @@ Partner in the Food World */}
                     </span>
                   )}
 
-            <button className="mt-auto px-4 py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
+            <a
+                              href='https://my.food2go.online/signUp'
+
+            className="mt-auto px-4 text-center  py-2 bg-one w-full border text-white rounded-[12px] group-hover:bg-white group-hover:border-one group-hover:text-one transition">
               Get Started
-            </button>
+            </a>
 
             <ul className="space-y-2 text-black group-hover:text-white transition">
               <li className="flex items-center text-[14px] gap-2">
