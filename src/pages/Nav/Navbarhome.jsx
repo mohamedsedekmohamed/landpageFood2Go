@@ -210,6 +210,7 @@ const Navbarhome = () => {
 
           {/* Mobile menu toggle */}
           <div className="md:hidden">
+            
             <button onClick={() => setIsOpen(!isOpen)}>
               {isOpen ? (
                 <CiMenuFries className="text-white text-4xl" />
