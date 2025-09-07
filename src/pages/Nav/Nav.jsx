@@ -1,10 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
 import { CiMenuBurger } from "react-icons/ci";
 import { CiMenuFries } from "react-icons/ci";
 import { GoArrowDownRight } from "react-icons/go";
-
+import AOS from "aos";
+import "aos/dist/aos.css";
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
@@ -40,6 +41,34 @@ const Nav = () => {
     ],
   };
 
+ 
+   const dropdownRef = useRef(null);
+   const mobileMenuRef = useRef(null);
+ 
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target)
+      ) {
+        setActiveDropdown(null);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+        setMobileDropdownOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+ 
+   useEffect(() => {
+     AOS.init({ duration: 2000, once: true });
+   }, []);
  
 
   const isActive = (path) => {
@@ -94,8 +123,8 @@ const Nav = () => {
             <span>Food2go</span>
           </a>
 
-          {/* Desktop Menu */}
-          <div className="hidden md:flex gap-6 relative">
+          {/* Desktop Menu */} 
+          <div className="hidden md:flex gap-6 relative"  ref={dropdownRef}>
     {navLinks.map((link, i) => {
   if (link.subLinks) {
     const isOpenDropdown = activeDropdown === link.name;

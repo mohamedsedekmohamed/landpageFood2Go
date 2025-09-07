@@ -1,24 +1,47 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { MdArrowOutward } from "react-icons/md";
-import { CiMenuBurger } from "react-icons/ci";
-import { CiMenuFries } from "react-icons/ci";
+import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
 import { GoArrowDownRight } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
+
 const Navbarhome = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState(null);
   const [mobileDropdownOpen, setMobileDropdownOpen] = useState(null);
 
+  const dropdownRef = useRef(null);
+  const mobileMenuRef = useRef(null);
+
   const location = useLocation();
   const navigate = useNavigate();
+
   useEffect(() => {
-    AOS.init({
-      duration: 2000, // optional: animation duration (ms)
-      once: true, // optional: whether animation should happen only once
-    });
+    AOS.init({ duration: 2000, once: true });
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (
+        dropdownRef.current &&
+        !dropdownRef.current.contains(e.target)
+      ) {
+        setActiveDropdown(null);
+      }
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(e.target)
+      ) {
+        setIsOpen(false);
+        setMobileDropdownOpen(null);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, []);
+
   const navLinks = [
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
@@ -49,17 +72,18 @@ const Navbarhome = () => {
   };
 
   return (
-    <div className="open-sans-light  relative h-fit  z-50 w-full ">
+    <div className="open-sans-light relative h-fit z-50 w-full">
       <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
-        <div className="flex justify-between md:gap-5    lg:gap-20 h-[88px] items-center">
+        <div className="flex justify-between md:gap-5 lg:gap-20 h-[88px] items-center">
+          {/* Logo */}
           <a
-          href="/"
+            href="/"
             data-aos="zoom-in"
             data-aos-duration="1000"
             data-aos-delay="300"
-            className="open-sans-bold text-[20px] md:text-[20px]  lg:text-[40px] text-white font-bold flex items-center"
+            className="open-sans-bold text-[20px] lg:text-[40px] text-white font-bold flex items-center"
           >
-            <svg
+             <svg
               width="56"
               height="55"
               viewBox="0 0 56 55"
@@ -103,34 +127,29 @@ const Navbarhome = () => {
           </a>
 
           {/* Desktop Menu */}
-          <div className="hidden md:flex gap-6 relative">
+          <div className="hidden md:flex gap-6 relative" ref={dropdownRef}>
             {navLinks.map((link, i) => {
               if (link.subLinks) {
                 const isOpenDropdown = activeDropdown === link.name;
-
                 return (
                   <div
                     key={i}
                     className="relative"
-                    onMouseEnter={() => setActiveDropdown(link.name)}
-                    onClick={() => setActiveDropdown(null)}
+                    onClick={() =>
+                      setActiveDropdown(
+                        activeDropdown === link.name ? null : link.name
+                      )
+                    }
                   >
                     <button
-                      className={`relative md:text-[12px] lg:text-[14px] xl:text-[20px] font-normal flex group px-1 py-2  ${
+                      className={`relative md:text-[12px] lg:text-[14px] xl:text-[20px] font-normal flex group px-1 py-2 ${
                         isActive ? "text-white" : "text-one"
-                      }  items-center`}
+                      } items-center`}
                     >
-                      {link.name === "Solutions" || link.name === "Pricing" ? (
-                        <>
-                          <span>{link.name} </span>{" "}
-                          <i>
-                            <GoArrowDownRight />
-                          </i>
-                        </>
-                      ) : (
-                        link.name
-                      )}
-
+                      {link.name}
+                      <i>
+                        <GoArrowDownRight />
+                      </i>
                       <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-one transition-all duration-300 group-hover:w-full"></span>
                     </button>
 
@@ -141,11 +160,10 @@ const Navbarhome = () => {
                             to={item.path}
                             key={idx}
                             onClick={() => setActiveDropdown(null)}
-                            className="flex items-center justify-between px-3 py-2 text-five md:text-[12px] lg:text-[14px] xl:text-[20px] hover:text-one transition w-full text-left"
+                            className="flex items-center justify-between px-3 py-2 text-five hover:text-one transition"
                           >
                             {item.name}
-
-                            <MdArrowOutward className=" w-5 h-5" />
+                            <MdArrowOutward className="w-5 h-5" />
                           </Link>
                         ))}
                       </div>
@@ -170,25 +188,24 @@ const Navbarhome = () => {
             })}
           </div>
 
-          <div className=" hidden md:flex gap-2">
-       <a 
-  href="https://my.food2go.online/"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-white border border-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-2 md:px-4 py-2"
->
-  Log in
-</a>
-
-<a
-  href="https://my.food2go.online/signUp"
-  target="_blank"
-  rel="noopener noreferrer"
-  className="text-one border bg-white rounded-[12px] md:text-[12px] lg:text-[14px] xl:text-[20px] font-medium px-2 md:px-4 py-2"
->
-  Sign up
-</a>
-
+          {/* Login/Signup */}
+          <div className="hidden md:flex gap-2">
+            <a
+              href="https://my.food2go.online/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white border border-white rounded-[12px] px-4 py-2"
+            >
+              Log in
+            </a>
+            <a
+              href="https://my.food2go.online/signUp"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-one border bg-white rounded-[12px] px-4 py-2"
+            >
+              Sign up
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
@@ -206,18 +223,20 @@ const Navbarhome = () => {
 
       {/* Mobile menu */}
       {isOpen && (
-        <div className="absolute w-full md:hidden px-4 pt-4 pb-6 space-y-4 bg-white backdrop-blur">
+        <div
+          ref={mobileMenuRef}
+          className="absolute w-full md:hidden px-4 pt-4 pb-6 space-y-4 bg-white backdrop-blur"
+        >
           {navLinks.map((link, i) => {
             if (link.subLinks) {
               const isDropdownOpen = mobileDropdownOpen === link.name;
-
               return (
                 <div key={i}>
                   <button
                     onClick={() =>
                       setMobileDropdownOpen(isDropdownOpen ? null : link.name)
                     }
-                    className="w-full flex justify-between items-center px-3 py-2 font-normal rounded text-black  hover:text-white"
+                    className="w-full flex justify-between items-center px-3 py-2 text-black hover:text-one"
                   >
                     {link.name}
                     <svg
@@ -246,7 +265,7 @@ const Navbarhome = () => {
                             setMobileDropdownOpen(null);
                             navigate(item.path);
                           }}
-                          className="block w-full text-left px-3 py-2 text-black  hover:text-white rounded"
+                          className="block w-full text-left px-3 py-2 text-black hover:text-one"
                         >
                           {item.name}
                         </button>
@@ -262,10 +281,10 @@ const Navbarhome = () => {
                 key={i}
                 to={link.path}
                 onClick={() => setIsOpen(false)}
-                className={`block px-3 py-2 rounded font-normal group relative ${
+                className={`block px-3 py-2 ${
                   isActive(link.path)
-                    ? " text-black "
-                    : "text-black hover:bg-one hover:text-white"
+                    ? "text-black"
+                    : "text-black hover:text-one"
                 }`}
               >
                 {link.name}
