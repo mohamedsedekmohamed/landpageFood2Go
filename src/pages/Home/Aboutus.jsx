@@ -5,11 +5,13 @@ import aboutuspic from "../../assets/Aboutuspic.png";
 import { MdArrowOutward } from "react-icons/md";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { useNavigate } from "react-router-dom";
 const Aboutus = () => {
+  const nav =useNavigate()
    useEffect(() => {
       AOS.init({
-        duration: 2000, // optional: animation duration (ms)
-        once: true, // optional: whether animation should happen only once
+        duration: 2000, 
+        once: true, 
       });
     }, []);
   return (
@@ -39,11 +41,11 @@ const Aboutus = () => {
               customers
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6" data-aos="zoom-in-up">
+            <div className="flex flex-wrap gap-4 mt-6" data-aos="zoom-in-up" onClick={()=>{nav("/viewmore")}}>
               <button className="text-base flex justify-center items-center gap-3 open-sans-regular sm:text-lg w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] bg-one rounded-3xl text-white transition hover:bg-gradient-to-b from-six to-one hover:scale-95">
-<span>
-    Pricing          
-    </span>
+<p >
+    View More          
+    </p>
     <MdArrowOutward/>
      </button>
            

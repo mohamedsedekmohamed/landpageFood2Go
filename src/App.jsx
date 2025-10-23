@@ -12,6 +12,7 @@ import UserApp from './pages/Home/UserApp'
 import DeliveryApp from './pages/Home/DeliveryApp'
 import Websiteorderonline from './pages/Home/Websiteorderonline'
 import Pos from './pages/Home/Pos'
+import ViewMore from './pages/Home/ViewMore'
 
 import {
   BrowserRouter as Router,
@@ -37,6 +38,7 @@ function App() {
         <Route path='/DeliveryApp' element={<DeliveryApp/>}/>
         <Route path='/Websiteorderonline' element={<Websiteorderonline/>}/>
         <Route path='/Pos' element={<Pos/>}/>
+        <Route path='/viewmore' element={<ViewMore/>}/>
       </Routes>
     </Router> </div>
   )

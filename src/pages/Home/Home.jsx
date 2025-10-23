@@ -24,6 +24,8 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../Footer/Footer";
 import Homepic from '../../assets/HomePic.png'
+import kmonh from '../../assets/kmonh.jpeg'
+import gadmost from '../../assets/gadmost.jpeg'
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -67,12 +69,13 @@ generation and menu browsing, so you can try it out before making a commitment.`
     setOpenIndex(openIndex === index ? null : index);
   };
   const images = [
-    { src: onehero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
-    { src: onehero, alt: 'hero 3' ,ref:"https://mostafagad.food2go.online" },
-    { src: twohero, alt: 'hero 4' ,ref:"https://lamadafood.food2go.online/location" },
-    { src: onehero, alt: 'hero 5' ,ref:"https://mostafagad.food2go.online" },
-    { src: twohero, alt: 'hero 6' ,ref:"https://lamadafood.food2go.online/location" },
+    { src: twohero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+    { src: kmonh, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
+    { src: gadmost, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+    { src: twohero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+    { src: kmonh, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
+    { src: gadmost, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+ 
   ];
 
   return (
