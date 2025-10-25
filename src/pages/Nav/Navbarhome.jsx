@@ -49,6 +49,7 @@ const Navbarhome = () => {
     { name: "Pricing", subLinks: "Pricing" },
     { name: "About Us", path: "/AboutUs" },
         { name: "Demos", path: "/demos" },
+    { name: "Clients", path: "/clients" },
 
     { name: "Contact Us", path: "/ContactUs" },
   ];
@@ -76,7 +77,7 @@ const Navbarhome = () => {
 
   return (
     <div className="open-sans-light relative h-fit z-50 w-full">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4 lg:px-6">
+      <div className=" mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between md:gap-5 lg:gap-20 h-[88px] items-center">
           <div>
        <a href="/">
