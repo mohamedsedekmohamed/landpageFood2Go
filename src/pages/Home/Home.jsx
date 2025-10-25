@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Navbarhome from "../Nav/Navbarhome";
 import { GoArrowUpRight } from "react-icons/go";
-import onehero from "../../assets/onehero.png";
-import twohero from "../../assets/twohero.png";
-import threehero from "../../assets/threehero.png";
+import onehero from "../../assets/pizznour.jpg";
+import twohero from "../../assets/lamadaa.jpg";
+import threehero from "../../assets/mshwat.jpg";
 import fourhero from "../../assets/fourhero.png";
 import fivehero from "../../assets/fivehero.png";
 import rowoneone from "../../assets/rowoneone.png";
@@ -69,16 +69,22 @@ generation and menu browsing, so you can try it out before making a commitment.`
     setOpenIndex(openIndex === index ? null : index);
   };
   const images = [
-    { src: twohero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-    { src: kmonh, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
-    { src: gadmost, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
-    { src: twohero, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-    { src: kmonh, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
-    { src: gadmost, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
- 
+    { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
+    { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+    { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
+    { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
+
+    { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
+    { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+    { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
+    { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
+
+
   ];
 
-  return (
+  return (  
     <div>
     <div className="relative w-full min-h-screen bg-cover bg-center" style={{ backgroundImage: `url(${Homepic})` }}>
       <Navbarhome />

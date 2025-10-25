@@ -20,6 +20,7 @@ import {
   Route,
   Link
 } from 'react-router-dom';
+import Demos from './pages/Home/Demos'
 
 function App() {
   return (
@@ -39,6 +40,7 @@ function App() {
         <Route path='/Websiteorderonline' element={<Websiteorderonline/>}/>
         <Route path='/Pos' element={<Pos/>}/>
         <Route path='/viewmore' element={<ViewMore/>}/>
+        <Route path='/demos' element={<Demos/>}/>
       </Routes>
     </Router> </div>
   )

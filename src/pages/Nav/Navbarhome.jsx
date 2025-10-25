@@ -5,7 +5,7 @@ import { CiMenuBurger, CiMenuFries } from "react-icons/ci";
 import { GoArrowDownRight } from "react-icons/go";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import logo from '../../assets/logo.png'
+import logo from '../../assets/logohome.png'
 
 const Navbarhome = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -48,6 +48,8 @@ const Navbarhome = () => {
     { name: "Solutions", subLinks: "Solutions" },
     { name: "Pricing", subLinks: "Pricing" },
     { name: "About Us", path: "/AboutUs" },
+        { name: "Demos", path: "/demos" },
+
     { name: "Contact Us", path: "/ContactUs" },
   ];
 

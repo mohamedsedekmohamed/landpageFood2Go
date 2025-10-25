@@ -269,7 +269,7 @@ className="text-one text-4xl md:text-5xl font-extrabold mb-4">
         dir="rtl"
         className="text-seven text-lg md:text-2xl leading-relaxed mb-6"
       >
-        ناس بتحب التطبيقات وبتنزل الموبايل أب عشان تطلب منه مباشرة.
+        ناس  تانية بتحب التطبيقات وبتنزل الموبايل أب عشان تطلب منه مباشرة.
       </p>
       <div className="flex justify-center">
         <img
@@ -293,7 +293,7 @@ className="text-one text-4xl md:text-5xl font-extrabold mb-4">
         className="text-seven text-lg md:text-2xl leading-relaxed mb-6"
       >
        
-         ناس تانية مش بتحب التطبيقات، لكن عايزة تطلب أونلاين، وده بنوفره من
+         ناس  مش بتحب التطبيقات، لكن عايزة تطلب أونلاين، وده بنوفره من
         خلال الموقع الإلكتروني (Website).
       </p>
       <div className="flex justify-center"     data-aos="flip-left"
