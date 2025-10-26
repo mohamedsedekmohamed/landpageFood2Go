@@ -10,7 +10,6 @@ import AdminApps from "../../assets/AdminApps.png";
 import Aboutuspic from "../../assets/Aboutuspic.png";
 import UserApps from "../../assets/UserApps.png";
 import Pos from "../../assets/Pos.png";
-import menuscan from "../../assets/menuscan.png";
 import one from "../../assets/1.png";
 import two from "../../assets/2.png";
 import Websiteorderonlines from "../../assets/Websiteorderonline.png";
@@ -23,7 +22,6 @@ import logo from "../../assets/logo.png"
 import wego from "../../assets/wego.png"
 import { FaApple } from "react-icons/fa";
 import { FaGooglePlay } from "react-icons/fa";
-import threemune from '../../assets/threemeun.jpeg'
 import lab from '../../assets/lab.jpg'
 import homenew from '../../assets/homenew.png'
 import com from '../../assets/com.png'
@@ -102,8 +100,10 @@ const ViewMore = () => {
       <span className="text-one font-semibold">Food2Go</span>، أحد مشاريع{" "}
       <span className="text-one font-semibold">Wego Station</span>، شركة
       برمجيات رائدة بدأت رحلتها عام{" "}
-      <span className="text-one font-extrabold">2010</span> في السوقين العربي
-      والمصري. بخبرتنا الطويلة وشغفنا بالتقنية، نصنع حلولًا ذكية ومبتكرة
+      <span className="text-one font-extrabold">2010</span> 
+      في السوقين المصري
+      والعربي.
+       بخبرتنا الطويلة وشغفنا بالتقنية، نصنع حلولًا ذكية ومبتكرة
       تواكب العصر وتلبي احتياجات المستقبل.
     </p>
   </div>

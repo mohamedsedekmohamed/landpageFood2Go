@@ -6,6 +6,8 @@ import Websiteorderonlines from "../../assets/Websiteorderonline.png";
 import Nav from "../Nav/Nav";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import { IoEnter } from "react-icons/io5";
+
 const Websiteorderonline = () => {
      useEffect(() => {
          AOS.init({
@@ -29,13 +31,24 @@ online, and download the app for more features
 — all from your website.
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6" data-aos="zoom-in-up">
+   <div className="flex   flex-wrap md:flex-nowrap justify-center gap-2 mt-6" data-aos="zoom-in-up">
               <a
                             href='https://my.food2go.online/signUp'
  className="text-base flex justify-center items-center gap-3 open-sans-regular sm:text-lg w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] bg-one rounded-3xl text-white transition hover:bg-gradient-to-b from-six to-one hover:scale-95">
                 <span>Pricing </span>
                 <MdArrowOutward />
               </a>
+               <a
+                             href="https://orderfood.food2go.online/"
+                             target="_blank"
+                             rel="noopener noreferrer"
+                             className="flex justify-center items-center gap-3 w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] 
+                                        rounded-3xl bg-white text-one border border-one text-base sm:text-lg 
+                                        open-sans-regular transition-all duration-300 hover:bg-gradient-to-b hover:from-six hover:to-one hover:text-white hover:scale-95 shadow-md hover:shadow-lg"
+                           >
+                             <span>Visite</span>
+                             <IoEnter className="text-3xl" />
+                           </a>
             </div>
           </div>
 

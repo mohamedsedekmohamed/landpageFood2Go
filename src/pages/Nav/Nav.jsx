@@ -15,16 +15,15 @@ const Nav = () => {
   const location = useLocation();
   const navigate = useNavigate();
  const pathname = location.pathname.replace("/", "").toLowerCase();
-  const excludedPaths = ["home", "aboutus", "contactus","demos"];
+  const excludedPaths = ["home", "aboutus", "contactus"];
   const showPathNameWithIcon = !excludedPaths.includes(pathname);
   
   const navLinks = [
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
     { name: "Packages", subLinks: "Pricing" },
+    { name: "Partners", subLinks: "Partners" },
     { name: "About Us", path: "/AboutUs" },
-    { name: "Demos", path: "/demos" },
-    { name: "Clients", path: "/clients" },
     { name: "Contact Us", path: "/ContactUs" },
   ];
 
@@ -42,6 +41,10 @@ const Nav = () => {
       { name: "Pricing", path: "/Pricing" },
       { name: "Packages", path: "/Plans" },
     ],
+    Partners:[
+       { name: "Demos", path: "/demos" },
+      { name: "Clients", path: "/clients" },
+    ]
   };
 
  

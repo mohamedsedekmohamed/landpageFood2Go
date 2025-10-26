@@ -47,10 +47,8 @@ const Navbarhome = () => {
     { name: "Home ", path: "/" },
     { name: "Solutions", subLinks: "Solutions" },
     { name: "Pricing", subLinks: "Pricing" },
+        { name: "Partners", subLinks: "Partners" },
     { name: "About Us", path: "/AboutUs" },
-        { name: "Demos", path: "/demos" },
-    { name: "Clients", path: "/clients" },
-
     { name: "Contact Us", path: "/ContactUs" },
   ];
 
@@ -68,6 +66,10 @@ const Navbarhome = () => {
       { name: "Pricing", path: "/Pricing" },
       { name: "Packages", path: "/Plans" },
     ],
+        Partners:[
+       { name: "Demos", path: "/demos" },
+      { name: "Clients", path: "/clients" },
+    ]
   };
 
   const isActive = (path) => {

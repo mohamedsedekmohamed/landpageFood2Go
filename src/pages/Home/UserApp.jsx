@@ -4,6 +4,8 @@ import ClientsSay from "../../Ui/ClientsSay";
 import { MdArrowOutward } from "react-icons/md";
 import UserApps from "../../assets/UserApps.png";
 import Nav from "../Nav/Nav";
+import { CiSaveDown1 } from "react-icons/ci";
+
  const UserApp = () => {
  return (
     <div>
@@ -21,15 +23,32 @@ your restaurant an enjoyable experience — from the first
 click to delivery!
             </p>
 
-            <div className="flex flex-wrap gap-4 mt-6" data-aos="zoom-in-up">
-              <a
-                            href='https://my.food2go.online/signUp'
+   <div className="flex flex-wrap justify-center gap-4 mt-6" data-aos="zoom-in-up">
+  <a
+    href="https://my.food2go.online/signUp"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex justify-center items-center gap-3 w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] 
+               rounded-3xl bg-gradient-to-b from-six to-one text-white text-base sm:text-lg 
+               open-sans-regular transition-all duration-300 hover:scale-95 shadow-md hover:shadow-lg"
+  >
+    <span>Pricing</span>
+    <MdArrowOutward className="text-xl" />
+  </a>
 
-className="text-base flex justify-center items-center gap-3 open-sans-regular sm:text-lg w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] bg-one rounded-3xl text-white transition hover:bg-gradient-to-b from-six to-one hover:scale-95">
-                <span>Pricing </span>
-                <MdArrowOutward />
-              </a>
-            </div>
+  <a
+    href="https://apps.apple.com/eg/app/food2go-system/id6747312676"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex justify-center items-center gap-3 w-full sm:w-[200px] lg:w-[296px] h-[60px] lg:h-[72px] 
+               rounded-3xl bg-white text-one border border-one text-base sm:text-lg 
+               open-sans-regular transition-all duration-300 hover:bg-gradient-to-b hover:from-six hover:to-one hover:text-white hover:scale-95 shadow-md hover:shadow-lg"
+  >
+    <span>Download</span>
+    <CiSaveDown1 className="text-3xl" />
+  </a>
+</div>
+
           </div>
 
           <div className=" flex items-center justify-center  w-full md:w-1/2  lg:mt-0">

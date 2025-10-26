@@ -26,6 +26,8 @@ import Footer from "../Footer/Footer";
 import Homepic from '../../assets/HomePic.png'
 import kmonh from '../../assets/kmonh.jpeg'
 import gadmost from '../../assets/gadmost.jpeg'
+import brazilian from "../../assets/brazilian.jpg";
+
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -74,13 +76,15 @@ generation and menu browsing, so you can try it out before making a commitment.`
     { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
+    { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
 
     { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
     { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online/location"  },
     { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
-
+    { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
+    
 
   ];
 
