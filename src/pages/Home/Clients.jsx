@@ -13,7 +13,9 @@ import { MdWeb } from "react-icons/md";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaAppStoreIos } from "react-icons/fa";
 import { BiLogoPlayStore } from "react-icons/bi";
-
+import hadrmot from "../../assets/hadrmot.jpg";
+import adoura from "../../assets/adoura.jpg";
+import na3n from "../../assets/na3n.jpg";
 const Clients = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
@@ -25,54 +27,82 @@ const Clients = () => {
       alt: "Mostafa Gad",
       ref: "https://mostafagad.food2go.online",
       fa: "https://www.facebook.com/MostafaGad.Restaurants/",
-      app:true,
-      ios:"https://apps.apple.com/eg/app/mostafa-gad-food/id6746445716",
-      goo:"https://play.google.com/store/apps/details?id=com.app.mostafaGad"
+      app: true,
+      ios: "https://apps.apple.com/eg/app/mostafa-gad-food/id6746445716",
+      goo: "https://play.google.com/store/apps/details?id=com.app.mostafaGad",
     },
     {
       src: twohero,
       alt: "Lamada",
       ref: "https://lamadafood.food2go.online",
       fa: "https://www.facebook.com/Lamada.Miami/",
-       app:true,
-      ios:"https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
-      goo:"https://play.google.com/store/apps/details?id=com.app.lmdawegodev"
+      app: true,
+      ios: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
+      goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
     },
     {
       src: kmonh,
       alt: "Kamona",
       ref: "https://kamona.food2go.online/",
       fa: "https://www.facebook.com/kamona.ag",
-       app:false,
-      ios:"https://apps.apple.com/eg/app/lamada/id6553989792",
-      goo:"https://play.google.com/store/apps/details?id=com.app.lmdawegodev"
+      app: false,
+      ios: "https://apps.apple.com/eg/app/lamada/id6553989792",
+      goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
     },
     {
       src: onehero,
       alt: "Pizza Nour",
       ref: "https://PizzaNour.food2go.online",
       fa: "https://www.facebook.com/Pizzanour45elfath/",
-       app:false,
-      ios:"a",
-      goo:"a"
+      app: false,
+      ios: "a",
+      goo: "a",
     },
     {
       src: threehero,
       alt: "Toyor Essa",
       ref: "https://toyoressa.food2go.online",
       fa: "https://www.facebook.com/tuoressa/",
-       app:false,
-      ios:"a",
-      goo:"a"
+      app: false,
+      ios: "a",
+      goo: "a",
     },
     {
       src: brazilian,
       alt: "Brazilian coffee",
       ref: "https://braziliancoffe.food2go.online/",
       fa: "https://www.facebook.com/profile.php?id=61581720911981",
-       app:false,
-      ios:"a",
-      goo:"a"
+      app: false,
+      ios: "a",
+      goo: "a",
+    },
+
+    {
+      src: hadrmot,
+      alt: "Hadarmawtel Sultan",
+      ref: "hadarmawtelsultan.food2go.online",
+      fa: "https://www.facebook.com/HadarmawotElSoltan?locale=ar_AR",
+      app: false,
+      ios: "a",
+      goo: "a",
+    },
+    {
+      src: na3n,
+      alt: "Naanaa Elsoury",
+      ref: "naanaaelsoury.food2go.online",
+      fa: "https://www.facebook.com/people/%D9%85%D8%B7%D8%B9%D9%85-%D9%86%D8%B9%D9%86%D8%B9-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A/100075465806890/?rdid=zFVVQ8Hsj7sD5YKA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17L936ckFb%2F",
+      app: false,
+      ios: "a",
+      goo: "a",
+    },
+    {
+      src: adoura,
+      alt: "kadoura Resturant",
+      ref: "kadouraresturant.food2go.online",
+      fa: "https://www.facebook.com/people/%D9%82%D8%AF%D9%88%D8%B1%D8%A9-Kadoura/61577965223806/",
+      app: false,
+      ios: "a",
+      goo: "a",
     },
   ];
 
@@ -127,35 +157,32 @@ const Clients = () => {
                 </div>
               </div>
 
-{item.app && (
-  <div className="flex flex-col sm:flex-row gap-3 justify-center items-center my-2 px-2">
-   {item.goo && (
-      <a
-        href={item.goo}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 bg-one text-white px-5 py-2 rounded-lg hover:bg-one/80 transition w-full sm:w-auto"
-      >
-        <BiLogoPlayStore className="text-white text-xl sm:text-2xl" />
-        <span className="font-medium">Google Play</span>
-      </a>
-    )}
-    {item.ios && (
-      <a
-        href={item.ios}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="flex items-center justify-center gap-2 bg-white border border-one text-blue-600 px-5 py-2 rounded-lg hover:bg-one hover:text-white transition w-full sm:w-auto"
-      >
-        <FaAppStoreIos className="text-blue-600 text-xl sm:text-2xl group-hover:text-white" />
-        <span className="font-medium">App Store</span>
-      </a>
-    )}
-
-  
-  </div>
-)}
-
+              {item.app && (
+                <div className="flex flex-col sm:flex-row gap-3 justify-center items-center my-2 px-2">
+                  {item.goo && (
+                    <a
+                      href={item.goo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-one text-white px-5 py-2 rounded-lg hover:bg-one/80 transition w-full sm:w-auto"
+                    >
+                      <BiLogoPlayStore className="text-white text-xl sm:text-2xl" />
+                      <span className="font-medium">Google Play</span>
+                    </a>
+                  )}
+                  {item.ios && (
+                    <a
+                      href={item.ios}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2 bg-white border border-one text-blue-600 px-5 py-2 rounded-lg hover:bg-one hover:text-white transition w-full sm:w-auto"
+                    >
+                      <FaAppStoreIos className="text-blue-600 text-xl sm:text-2xl group-hover:text-white" />
+                      <span className="font-medium">App Store</span>
+                    </a>
+                  )}
+                </div>
+              )}
             </div>
           ))}
         </div>

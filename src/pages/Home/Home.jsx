@@ -4,8 +4,9 @@ import { GoArrowUpRight } from "react-icons/go";
 import onehero from "../../assets/pizznour.jpg";
 import twohero from "../../assets/lamadaa.jpg";
 import threehero from "../../assets/mshwat.jpg";
-import fourhero from "../../assets/fourhero.png";
-import fivehero from "../../assets/fivehero.png";
+import hadrmot from "../../assets/hadrmot.jpg";
+import adoura from "../../assets/adoura.jpg";
+import na3n from "../../assets/na3n.jpg";
 import rowoneone from "../../assets/rowoneone.png";
 import rowonetwo from "../../assets/rowonetwo.png";
 import rowonethree from "../../assets/rowonethree.png";
@@ -77,6 +78,9 @@ generation and menu browsing, so you can try it out before making a commitment.`
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
     { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
+    { src: hadrmot, alt: 'hero 7' ,ref:"hadarmawtelsultan.food2go.online" },
+    { src: na3n, alt: 'hero 8' ,ref:"naanaaelsoury.food2go.online" },
+    { src: adoura, alt: 'hero 9' ,ref:"kadouraresturant.food2go.online" },
 
     { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
     { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
@@ -84,6 +88,9 @@ generation and menu browsing, so you can try it out before making a commitment.`
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
     { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
+        { src: hadrmot, alt: 'hero 7' ,ref:"hadarmawtelsultan.food2go.online" },
+    { src: na3n, alt: 'hero 8' ,ref:"naanaaelsoury.food2go.online" },
+    { src: adoura, alt: 'hero 9' ,ref:"kadouraresturant.food2go.online" },
     
 
   ];
