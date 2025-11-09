@@ -80,7 +80,7 @@ const Clients = () => {
     {
       src: hadrmot,
       alt: "Hadarmawtel Sultan",
-      ref: "hadarmawtelsultan.food2go.online",
+      ref: "https://hadarmawtelsultan.food2go.online",
       fa: "https://www.facebook.com/HadarmawotElSoltan?locale=ar_AR",
       app: false,
       ios: "a",
@@ -89,7 +89,7 @@ const Clients = () => {
     {
       src: na3n,
       alt: "Naanaa Elsoury",
-      ref: "naanaaelsoury.food2go.online",
+      ref: "https://naanaaelsoury.food2go.online",
       fa: "https://www.facebook.com/people/%D9%85%D8%B7%D8%B9%D9%85-%D9%86%D8%B9%D9%86%D8%B9-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A/100075465806890/?rdid=zFVVQ8Hsj7sD5YKA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17L936ckFb%2F",
       app: false,
       ios: "a",
@@ -98,7 +98,7 @@ const Clients = () => {
     {
       src: adoura,
       alt: "kadoura Resturant",
-      ref: "kadouraresturant.food2go.online",
+      ref: "https://kadouraresturant.food2go.online",
       fa: "https://www.facebook.com/people/%D9%82%D8%AF%D9%88%D8%B1%D8%A9-Kadoura/61577965223806/",
       app: false,
       ios: "a",

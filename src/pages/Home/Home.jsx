@@ -78,9 +78,9 @@ generation and menu browsing, so you can try it out before making a commitment.`
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
     { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-    { src: hadrmot, alt: 'hero 7' ,ref:"hadarmawtelsultan.food2go.online" },
-    { src: na3n, alt: 'hero 8' ,ref:"naanaaelsoury.food2go.online" },
-    { src: adoura, alt: 'hero 9' ,ref:"kadouraresturant.food2go.online" },
+    { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
+    { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
+    { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
 
     { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
     { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
@@ -88,9 +88,9 @@ generation and menu browsing, so you can try it out before making a commitment.`
     { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
     { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
     { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-        { src: hadrmot, alt: 'hero 7' ,ref:"hadarmawtelsultan.food2go.online" },
-    { src: na3n, alt: 'hero 8' ,ref:"naanaaelsoury.food2go.online" },
-    { src: adoura, alt: 'hero 9' ,ref:"kadouraresturant.food2go.online" },
+        { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
+    { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
+    { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
     
 
   ];
