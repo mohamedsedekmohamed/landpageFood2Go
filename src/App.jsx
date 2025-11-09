@@ -26,7 +26,9 @@ import Demos from './pages/Home/Demos'
 function App() {
   return (
  <div className='max-w-screen overflow-hidden'>
- <Router>
+  
+ <Router> 
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/Pricing" element={<Pricing />} />
