@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import Navbarhome from "../Nav/Navbarhome";
 import { GoArrowUpRight } from "react-icons/go";
-import onehero from "../../assets/pizznour.jpg";
-import twohero from "../../assets/lamadaa.jpg";
-import threehero from "../../assets/mshwat.jpg";
-import hadrmot from "../../assets/hadrmot.jpg";
-import adoura from "../../assets/adoura.jpg";
-import na3n from "../../assets/na3n.jpg";
+// import onehero from "../../assets/pizznour.jpg";
+// import twohero from "../../assets/lamadaa.jpg";
+// import threehero from "../../assets/mshwat.jpg";
+// import hadrmot from "../../assets/hadrmot.jpg";
+// import adoura from "../../assets/adoura.jpg";
+// import na3n from "../../assets/na3n.jpg";
 import rowoneone from "../../assets/rowoneone.png";
 import rowonetwo from "../../assets/rowonetwo.png";
 import rowonethree from "../../assets/rowonethree.png";
@@ -25,10 +25,10 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 import Footer from "../Footer/Footer";
 import Homepic from '../../assets/HomePic.png'
-import kmonh from '../../assets/kmonh.jpeg'
-import gadmost from '../../assets/gadmost.jpeg'
-import brazilian from "../../assets/brazilian.jpg";
-
+// import kmonh from '../../assets/kmonh.jpeg'
+// import gadmost from '../../assets/gadmost.jpeg'
+// import brazilian from "../../assets/brazilian.jpg";
+import axios from "axios";
 const Home = () => {
   useEffect(() => {
     AOS.init({
@@ -71,29 +71,41 @@ generation and menu browsing, so you can try it out before making a commitment.`
   const toggle = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
-  const images = [
-    { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
-    { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
-    { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
-    { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
-    { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-    { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
-    { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
-    { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
+  const [image,setImage]=useState([])
 
-    { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-    { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
-    { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
-    { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
-    { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
-    { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-        { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
-    { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
-    { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
-    
+  useEffect(()=>{
+  const fetchData = async () => {
+      try {
+        const response = await axios.get("https://clientbcknd.food2go.online/user/domain/client");
+        setImage(response.data.domains);
+      } catch (err) {
+        console.error(err);
+      } 
+    };
 
-  ];
+    fetchData();
+  },[])
+  // const images = [
+  //   { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+  //   { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
+  //   { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+  //   { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
+  //   { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
+  //   { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
+  //   { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
+  //   { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
+  //   { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
+
+  //   { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
+  //   { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
+  //   { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
+  //   { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
+  //   { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
+  //   { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
+  //       { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
+  //   { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
+  //   { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
+  // ];
 
   return (  
     <div>
@@ -133,6 +145,7 @@ generation and menu browsing, so you can try it out before making a commitment.`
       </div>
     </div>
       {/* hero  */}
+{image &&(
       <div
       className="bg-two flex flex-col py-8 px-4 md:py-16 md:px-10 overflow-hidden"
       data-aos="flip-up"
@@ -140,22 +153,21 @@ generation and menu browsing, so you can try it out before making a commitment.`
       <span className="w-full text-center font-bold text-lg md:text-xl lg:text-2xl xl:text-4xl text-six mb-8">
         Our Clients Are Our Partners in Success
       </span>
-
-      <div className="relative h-auto flex items-center justify-center">
+  <div className="relative h-auto flex items-center justify-center">
         <div className="whitespace-nowrap marquee flex space-x-4 md:space-x-8 lg:space-x-12">
          {[...Array(2)].map((_, i) => (
   <React.Fragment key={i}>
-    {images.map((image, idx) => (
+    {image.map((image, idx) => (
       <a
         key={idx}
-        href={image.ref}
+        href={image.website}
         target="_blank"
         rel="noopener noreferrer"
      className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
 
       >
         <img
-          src={image.src}
+          src={image.img}
           alt={image.alt}
           className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
         />
@@ -165,7 +177,10 @@ generation and menu browsing, so you can try it out before making a commitment.`
 ))}
         </div>
       </div>
+
     </div>
+)}
+    
      
       <div
       id="solutions-section"

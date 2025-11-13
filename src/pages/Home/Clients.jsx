@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import kmonh from "../../assets/kmonh.jpeg";
-import gadmost from "../../assets/gadmost.jpeg";
-import onehero from "../../assets/pizznour.jpg";
-import twohero from "../../assets/lamadaa.jpg";
-import threehero from "../../assets/mshwat.jpg";
-import brazilian from "../../assets/brazilian.jpg";
+import React, { useEffect, useState } from "react";
+// import kmonh from "../../assets/kmonh.jpeg";
+// import gadmost from "../../assets/gadmost.jpeg";
+// import onehero from "../../assets/pizznour.jpg";
+// import twohero from "../../assets/lamadaa.jpg";
+// import threehero from "../../assets/mshwat.jpg";
+// import brazilian from "../../assets/brazilian.jpg";
 import AOS from "aos";
 import "aos/dist/aos.css";
 import Nav from "../Nav/Nav";
@@ -13,98 +13,114 @@ import { MdWeb } from "react-icons/md";
 import { IoLogoFacebook } from "react-icons/io5";
 import { FaAppStoreIos } from "react-icons/fa";
 import { BiLogoPlayStore } from "react-icons/bi";
-import hadrmot from "../../assets/hadrmot.jpg";
-import adoura from "../../assets/adoura.jpg";
-import na3n from "../../assets/na3n.jpg";
+// import hadrmot from "../../assets/hadrmot.jpg";
+// import adoura from "../../assets/adoura.jpg";
+// import na3n from "../../assets/na3n.jpg";
+import axios from "axios";
+
 const Clients = () => {
   useEffect(() => {
     AOS.init({ duration: 1000 });
   }, []);
+ const [images, setImage] = useState([]);
 
-  const images = [
-    {
-      src: gadmost,
-      alt: "Mostafa Gad",
-      ref: "https://mostafagad.food2go.online",
-      fa: "https://www.facebook.com/MostafaGad.Restaurants/",
-      app: true,
-      ios: "https://apps.apple.com/eg/app/mostafa-gad-food/id6746445716",
-      goo: "https://play.google.com/store/apps/details?id=com.app.mostafaGad",
-    },
-    {
-      src: twohero,
-      alt: "Lamada",
-      ref: "https://lamadafood.food2go.online",
-      fa: "https://www.facebook.com/Lamada.Miami/",
-      app: true,
-      ios: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
-      goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
-    },
-    {
-      src: kmonh,
-      alt: "Kamona",
-      ref: "https://kamona.food2go.online/",
-      fa: "https://www.facebook.com/kamona.ag",
-      app: false,
-      ios: "https://apps.apple.com/eg/app/lamada/id6553989792",
-      goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
-    },
-    {
-      src: onehero,
-      alt: "Pizza Nour",
-      ref: "https://PizzaNour.food2go.online",
-      fa: "https://www.facebook.com/Pizzanour45elfath/",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
-    {
-      src: threehero,
-      alt: "Toyor Essa",
-      ref: "https://toyoressa.food2go.online",
-      fa: "https://www.facebook.com/tuoressa/",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
-    {
-      src: brazilian,
-      alt: "Brazilian coffee",
-      ref: "https://braziliancoffe.food2go.online/",
-      fa: "https://www.facebook.com/profile.php?id=61581720911981",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          "https://clientbcknd.food2go.online/user/domain/client_domains"
+        );
+        setImage(response.data.client_domains);
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    fetchData();
+  }, []);
+  // const images = [
+  //   {
+  //     src: gadmost,
+  //     alt: "Mostafa Gad",
+  //     ref: "https://mostafagad.food2go.online",
+  //     fa: "https://www.facebook.com/MostafaGad.Restaurants/",
+  //     app: true,
+  //     ios: "https://apps.apple.com/eg/app/mostafa-gad-food/id6746445716",
+  //     goo: "https://play.google.com/store/apps/details?id=com.app.mostafaGad",
+  //   },
+  //   {
+  //     src: twohero,
+  //     alt: "Lamada",
+  //     ref: "https://lamadafood.food2go.online",
+  //     fa: "https://www.facebook.com/Lamada.Miami/",
+  //     app: true,
+  //     ios: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
+  //     goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
+  //   },
+  //   {
+  //     src: kmonh,
+  //     alt: "Kamona",
+  //     ref: "https://kamona.food2go.online/",
+  //     fa: "https://www.facebook.com/kamona.ag",
+  //     app: false,
+  //     ios: "https://apps.apple.com/eg/app/lamada/id6553989792",
+  //     goo: "https://play.google.com/store/apps/details?id=com.app.lmdawegodev",
+  //   },
+  //   {
+  //     src: onehero,
+  //     alt: "Pizza Nour",
+  //     ref: "https://PizzaNour.food2go.online",
+  //     fa: "https://www.facebook.com/Pizzanour45elfath/",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
+  //   {
+  //     src: threehero,
+  //     alt: "Toyor Essa",
+  //     ref: "https://toyoressa.food2go.online",
+  //     fa: "https://www.facebook.com/tuoressa/",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
+  //   {
+  //     src: brazilian,
+  //     alt: "Brazilian coffee",
+  //     ref: "https://braziliancoffe.food2go.online/",
+  //     fa: "https://www.facebook.com/profile.php?id=61581720911981",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
 
-    {
-      src: hadrmot,
-      alt: "Hadarmawtel Sultan",
-      ref: "https://hadarmawtelsultan.food2go.online",
-      fa: "https://www.facebook.com/HadarmawotElSoltan?locale=ar_AR",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
-    {
-      src: na3n,
-      alt: "Naanaa Elsoury",
-      ref: "https://naanaaelsoury.food2go.online",
-      fa: "https://www.facebook.com/people/%D9%85%D8%B7%D8%B9%D9%85-%D9%86%D8%B9%D9%86%D8%B9-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A/100075465806890/?rdid=zFVVQ8Hsj7sD5YKA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17L936ckFb%2F",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
-    {
-      src: adoura,
-      alt: "kadoura Resturant",
-      ref: "https://kadouraresturant.food2go.online",
-      fa: "https://www.facebook.com/people/%D9%82%D8%AF%D9%88%D8%B1%D8%A9-Kadoura/61577965223806/",
-      app: false,
-      ios: "a",
-      goo: "a",
-    },
-  ];
+  //   {
+  //     src: hadrmot,
+  //     alt: "Hadarmawtel Sultan",
+  //     ref: "https://hadarmawtelsultan.food2go.online",
+  //     fa: "https://www.facebook.com/HadarmawotElSoltan?locale=ar_AR",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
+  //   {
+  //     src: na3n,
+  //     alt: "Naanaa Elsoury",
+  //     ref: "https://naanaaelsoury.food2go.online",
+  //     fa: "https://www.facebook.com/people/%D9%85%D8%B7%D8%B9%D9%85-%D9%86%D8%B9%D9%86%D8%B9-%D8%A7%D9%84%D8%B3%D9%88%D8%B1%D9%8A/100075465806890/?rdid=zFVVQ8Hsj7sD5YKA&share_url=https%3A%2F%2Fwww.facebook.com%2Fshare%2F17L936ckFb%2F",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
+  //   {
+  //     src: adoura,
+  //     alt: "kadoura Resturant",
+  //     ref: "https://kadouraresturant.food2go.online",
+  //     fa: "https://www.facebook.com/people/%D9%82%D8%AF%D9%88%D8%B1%D8%A9-Kadoura/61577965223806/",
+  //     app: false,
+  //     ios: "a",
+  //     goo: "a",
+  //   },
+  // ];
 
   return (
     <div className="bg-gray-100 min-h-screen">
@@ -126,7 +142,7 @@ const Clients = () => {
               className="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all overflow-hidden"
             >
               <img
-                src={item.src}
+                src={item.img}
                 alt={item.alt}
                 className="w-full h-70 hover:scale-110 transition duration-300"
               />
@@ -136,7 +152,7 @@ const Clients = () => {
                 </h2>
                 <div className="flex flex-col sm:flex-row gap-3 justify-center items-center mt-4">
                   <a
-                    href={item.ref}
+                    href={item.website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-one text-white px-5 py-2 rounded-lg hover:bg-one/70 transition w-full sm:w-auto"
@@ -146,7 +162,7 @@ const Clients = () => {
                   </a>
 
                   <a
-                    href={item.fa}
+                    href={item.facaebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-white border border-one text-blue-600 px-5 py-2 rounded-lg hover:bg-one hover:text-white transition w-full sm:w-auto"
@@ -157,11 +173,11 @@ const Clients = () => {
                 </div>
               </div>
 
-              {item.app && (
+              {item.app_status===1 && (
                 <div className="flex flex-col sm:flex-row gap-3 justify-center items-center my-2 px-2">
-                  {item.goo && (
+                  {item.android && (
                     <a
-                      href={item.goo}
+                      href={item.android}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="flex items-center justify-center gap-2 bg-one text-white px-5 py-2 rounded-lg hover:bg-one/80 transition w-full sm:w-auto"
