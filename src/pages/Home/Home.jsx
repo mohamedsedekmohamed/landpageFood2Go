@@ -138,44 +138,46 @@ const secondHalf = image.slice(mid);
       </span>
       
 
- <div className="relative h-auto flex items-center justify-center">
-        <div className="whitespace-nowrap marquee flex space-x-4 md:space-x-8 lg:space-x-12">
-    {[...firstHalf].map((item, idx) => (
+<div className="relative overflow-hidden">
+  <div className="marquee flex space-x-6">
+    {[...firstHalf, ...firstHalf].map((item, idx) => (
       <a
         key={idx}
         href={item.website}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+        className="w-[150px] md:w-[200px] lg:w-[250px]"
       >
         <img
           src={item.img}
           alt={item.alt}
-          className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+          className="w-full h-auto rounded-xl"
         />
       </a>
     ))}
   </div>
 </div>
- <div className="relative h-auto   mt-5 flex items-center justify-center">
-        <div className="whitespace-nowrap marquer flex space-x-4 md:space-x-8 lg:space-x-12">
-    {[...secondHalf].map((item, idx) => (
+
+<div className="relative overflow-hidden mt-6">
+  <div className="marquee-reverse flex space-x-6">
+    {[...secondHalf, ...secondHalf].map((item, idx) => (
       <a
         key={idx}
         href={item.website}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+        className="w-[150px] md:w-[200px] lg:w-[250px]"
       >
         <img
           src={item.img}
           alt={item.alt}
-          className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+          className="w-full h-auto rounded-xl"
         />
       </a>
     ))}
   </div>
 </div>
+
 
 
     </div>

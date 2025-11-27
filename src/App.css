@@ -1,58 +1,29 @@
-
 .marquee {
-  animation: marquee 20s linear infinite;
-  white-space: nowrap; 
-}
-.marquer {
-  animation: marquer 20s linear infinite;
-  white-space: nowrap; 
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-left 20s linear infinite;
 }
 
-@keyframes marquee {
-  0% {
-    transform: translateX(0);
-  }
-  20% {
-    transform: translateX(-10%);
-  }
-  40% {
-    transform: translateX(-20%);
-  }
-  60% {
-    transform: translateX(-30%);
-  }
-  80% {
-    transform: translateX(-40%);
-  }
-  100% {
-    transform: translateX(-50%); 
-  }
+.marquee-reverse {
+  display: inline-flex;
+  white-space: nowrap;
+  animation: scroll-right 20s linear infinite;
 }
-@keyframes marquer {
-  0% {
+
+@keyframes scroll-left {
+  from {
     transform: translateX(0);
   }
-  20% {
-    transform: translateX(10%);
-  }
-  40% {
-    transform: translateX(20%);
-  }
-  60% {
-    transform: translateX(30%);
-  }
-  80% {
-    transform: translateX(40%);
-  }
-  100% {
-    transform: translateX(50%); 
+  to {
+    transform: translateX(-50%);
   }
 }
 
-.no-scrollbar::-webkit-scrollbar {
-  display: none;
-}
-.no-scrollbar {
-  -ms-overflow-style: none; 
-  scrollbar-width: none; 
+@keyframes scroll-right {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
 }
