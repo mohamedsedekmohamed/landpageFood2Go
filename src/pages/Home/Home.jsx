@@ -85,27 +85,10 @@ generation and menu browsing, so you can try it out before making a commitment.`
 
     fetchData();
   },[])
-  // const images = [
-  //   { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-  //   { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
-  //   { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
-  //   { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
-  //   { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
-  //   { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-  //   { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
-  //   { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
-  //   { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
+const mid = Math.ceil(image.length / 2);
+const firstHalf = image.slice(0, mid);
+const secondHalf = image.slice(mid);
 
-  //   { src: gadmost, alt: 'hero 1',ref:"https://mostafagad.food2go.online" },
-  //   { src: twohero, alt: 'hero 2',ref:"https://lamadafood.food2go.online"  },
-  //   { src: kmonh, alt: 'hero 3' ,ref:"https://kamona.food2go.online/" },
-  //   { src: onehero, alt: 'hero 4' ,ref:"https://PizzaNour.food2go.online" },
-  //   { src: threehero, alt: 'hero 5' ,ref:"https://toyoressa.food2go.online" },
-  //   { src: brazilian, alt: 'hero 6' ,ref:"https://braziliancoffe.food2go.online/" },
-  //       { src: hadrmot, alt: 'hero 7' ,ref:"https://hadarmawtelsultan.food2go.online" },
-  //   { src: na3n, alt: 'hero 8' ,ref:"https://naanaaelsoury.food2go.online" },
-  //   { src: adoura, alt: 'hero 9' ,ref:"https://kadouraresturant.food2go.online" },
-  // ];
 
   return (  
     <div>
@@ -153,30 +136,47 @@ generation and menu browsing, so you can try it out before making a commitment.`
       <span className="w-full text-center font-bold text-lg md:text-xl lg:text-2xl xl:text-4xl text-six mb-8">
         Our Clients Are Our Partners in Success
       </span>
-  <div className="relative h-auto flex items-center justify-center">
+      
+
+ <div className="relative h-auto flex items-center justify-center">
         <div className="whitespace-nowrap marquee flex space-x-4 md:space-x-8 lg:space-x-12">
-         {[...Array(2)].map((_, i) => (
-  <React.Fragment key={i}>
-    {image.map((image, idx) => (
+    {[...firstHalf].map((item, idx) => (
       <a
         key={idx}
-        href={image.website}
+        href={item.website}
         target="_blank"
         rel="noopener noreferrer"
-     className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
-
+        className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
       >
         <img
-          src={image.img}
-          alt={image.alt}
+          src={item.img}
+          alt={item.alt}
           className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
         />
-     </a>
+      </a>
     ))}
-  </React.Fragment>
-))}
-        </div>
-      </div>
+  </div>
+</div>
+ <div className="relative h-auto   mt-5 flex items-center justify-center">
+        <div className="whitespace-nowrap marquer flex space-x-4 md:space-x-8 lg:space-x-12">
+    {[...secondHalf].map((item, idx) => (
+      <a
+        key={idx}
+        href={item.website}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+      >
+        <img
+          src={item.img}
+          alt={item.alt}
+          className="w-[150px] h-auto rounded-xl md:w-[200px] lg:w-[250px]"
+        />
+      </a>
+    ))}
+  </div>
+</div>
+
 
     </div>
 )}
