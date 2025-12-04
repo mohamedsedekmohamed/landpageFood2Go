@@ -89,7 +89,9 @@ const Navbarhome = () => {
 <div className="absolute inset-0 bg-white/10 backdrop-blur-2xl  rounded-2xl border-white/20 z-0"></div>
 
   <img src={logo} 
-  className="w-30 relative z-10 mt-1"
+  className="w-30 
+  relative
+   z-10 mt-1"
    alt="logo" />
 
 </a>
