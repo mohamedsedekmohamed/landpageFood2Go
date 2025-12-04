@@ -25,7 +25,7 @@ import Demos from './pages/Home/Demos'
 
 function App() {
   return (
- <div className='max-w-screen overflow-hidden'>
+ <div className='max-w-screen relative overflow-hidden'>
   
  <Router> 
 
@@ -46,7 +46,23 @@ function App() {
         <Route path='/demos' element={<Demos/>}/>
         <Route path='/clients' element={<Clients/>}/>
       </Routes>
-    </Router> </div>
+    </Router>
+     <div className="fixed bottom-5 right-5 z-50">
+  <a
+    href="https://wa.me/201111771103?text=مرحبا،%20أريد%20التواصل%20معكم"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="bg-green-500 w-14 h-14 flex items-center justify-center rounded-full shadow-lg hover:scale-110 duration-300"
+  >
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg"
+      alt="whatsapp"
+      className="w-8 h-8"
+    />
+  </a>
+</div>
+
+     </div>
   )
 }
 

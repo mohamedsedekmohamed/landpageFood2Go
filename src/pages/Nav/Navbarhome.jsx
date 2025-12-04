@@ -82,9 +82,14 @@ const Navbarhome = () => {
       <div className=" mx-auto px-2 sm:px-4 lg:px-6">
         <div className="flex justify-between md:gap-5 lg:gap-20 h-[88px] items-center">
           <div>
-       <a href="/">
-       <img src={logo} className="w-30"/>
-       </a>
+   <a href="/" className="relative inline-block px-3 py-4">
+  
+<div className="absolute inset-0 bg-white/10 backdrop-blur-2xl  rounded-2xl border-white/20 z-0"></div>
+
+  <img src={logo} className="w-30 relative z-10 mt-1" alt="logo" />
+
+</a>
+
                  </div>
 
           {/* Desktop Menu */}
